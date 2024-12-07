@@ -79,8 +79,7 @@ SEAT_POSITION: In front of the body
 Small aerial vehicle. Extremely agile.
 
 Similar to PAWN, but only has wire turrets.
-/NEW_ENTRY/
-ENTRY_NAME: GROX STAR DART
+/NEW_ENTRY/ENTRY_NAME: GROX STAR DART
 SEAT_POSITION: UNKNOWN
 
 Small aerial vehicle, agile.
