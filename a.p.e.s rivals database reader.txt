@@ -8,6 +8,7 @@ if SERVER then
     Screen = prop.createComponent(chip():getPos()+Vector(0,0,50),(owner():getEyePos()-chip():getPos()+Vector(0,0,50)):getAngle():setP(90),"starfall_screen","models/hunter/plates/plate1x1.mdl",true)
     Screen:linkComponent(chip())
     net.start("NetScreen") net.writeEntity(Screen) net.send()
+    http.get("https://raw.githubusercontent.com/BPRJon/A.P.E.S-Rival-Database/refs/heads/main/a.p.e.s%20rivals%20database%20reader.txt",function(data) local ver = string.explode("\n",data)[1] if ver != "VERSION = "..VERSION then print("Database Reader out of date! Please update at https://github.com/BPRJon/A.P.E.S-Rival-Database/blob/main/a.p.e.s%20rivals%20database%20reader.txt") end end,function() print("Couldn't check for possible updates. Go to https://github.com/BPRJon/A.P.E.S-Rival-Database/tree/main and check for updates please!") end)
 elseif CLIENT then
     --read the screen net
     net.receive("NetScreen",function()
