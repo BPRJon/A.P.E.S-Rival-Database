@@ -1,0 +1,88 @@
+VERSION = 1.0
+--@name A.P.E.S Rivals Database Reader
+--@author jon b
+--@shared
+--@model models/spacecode/sfchip.mdl
+if SERVER then
+    --spawn and link a screen, the net it to client for rendering
+    Screen = prop.createComponent(chip():getPos()+Vector(0,0,50),(owner():getEyePos()-chip():getPos()+Vector(0,0,50)):getAngle():setP(90),"starfall_screen","models/hunter/plates/plate1x1.mdl",true)
+    Screen:linkComponent(chip())
+    net.start("NetScreen") net.writeEntity(Screen) net.send()
+elseif CLIENT then
+    --read the screen net
+    net.receive("NetScreen",function()
+        Screen = net.readEntity()
+        end)
+    
+    --links for the github data
+    linkData = {
+        ["Grox Astro Fleet"] = "https://raw.githubusercontent.com/BPRJon/A.P.E.S-Rival-Database/refs/heads/main/database-submissions/Grox%20Astro%20Fleet.txt"
+    }
+    entryList = {}
+    selectedFaction = nil
+    selectedEntry = 0
+    
+    --changed function (ty adver)
+    local changedTable = {}
+    function changed(index,obj)
+        local bool = (obj ~= changedTable[index])
+        changedTable[index] = obj
+        return bool
+    end
+    
+    --bunton function
+    hook.add("think","mousepos and click detection",function() mouseClk = changed("DidTheyLeftClick",input.isMouseDown(MOUSE.LEFT)) and input.isMouseDown(MOUSE.LEFT) end)
+    local buttonTable = {}
+    function button(x,y,text,func)
+        if y > 30 or text == " X " or text == " < " then
+        local textSizeX,textSizeY = render.getTextSize(text)
+        local buttonClk = mouseX ~= nil and mouseX < x+textSizeX+4 and mouseX > x and mouseY < y+textSizeY+4 and mouseY > y and mouseClk
+        
+        buttonTable[text] = buttonClk
+        if func ~= nil and buttonClk then func() end
+        
+        render.drawRectOutline(x-1,y-1,textSizeX+3,textSizeY+3)
+        render.drawSimpleText(x+1,y+1,text,TEXT_ALIGN.LEFT,TEXT_ALIGN.TOP)
+        end
+    end
+    
+    --render the shit.
+    render.setFont("Trebuchet24")
+    local scroll = 0
+    hook.add("render","drawscreen",function()
+        mouseX,mouseY = render.cursorPos()
+        render.clear()
+        render.setColor(Color(100,0,0))
+        render.drawRect(0,0,512,30)
+        render.setColor(Color(255,255,255))
+        local fancyPathText = "SAT4/RIVALS-DATABASE/"
+        if mouseX ~= nil then
+            render.drawCircle(mouseX,mouseY,3)
+        end
+        if selectedFaction == nil then
+            local num = 0
+            for i,v in pairs(linkData) do
+                num = num + 1
+                button(5,50*num,i,function() selectedFaction = i http.get(v,function(data) entryList = string.explode("/NEW_ENTRY/",data) end) end)
+            end
+        else
+            fancyPathText = fancyPathText..selectedFaction.."/"
+            local scrollMax = table.count(entryList)*20
+            button(480,0," X ",function() selectedFaction = nil selectedEntry = 0 end)
+            button(480,40,"UP",function() scroll = math.clamp(scroll+100,-scrollMax,0) end)
+            button(480,480,"DN",function() scroll = math.clamp(scroll-100,-scrollMax,0) end)
+            if selectedEntry ~= 0 then
+                fancyPathText = fancyPathText..selectedEntry.."/"
+                local markup = render.parseMarkup("<font=Trebuchet24>"..entryList[selectedEntry].."</font>",450)
+                markup:draw(5+scroll,40)
+                button(450,0," < ",function() selectedEntry = 0 scroll = 0 end)
+            else
+                for i,v in pairs(entryList) do
+                    local text = string.replace(string.explode("\n",v)[1],"ENTRY_NAME: ","")
+                    button(5,50*i+scroll,text,function() selectedEntry = i scroll = 0 end)
+                end
+            end
+        end
+        render.drawSimpleText(5,15,fancyPathText,TEXT_ALIGN.LEFT,TEXT_ALIGN.CENTER)
+        end)
+end
