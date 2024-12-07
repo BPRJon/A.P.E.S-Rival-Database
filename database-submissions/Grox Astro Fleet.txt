@@ -4,7 +4,7 @@ Grox Astro Fleet (further refered to as 'Grox' or 'The Grox') is a seemingly sma
 
 There are 2 known members: [Squidward Gaming] and Talion. Their vehicles are strong enough to where just the two of them pose a significant threat to even 3 A.P.E.S members -- although it is not unusual for them to attempt to enlist the help of entrants to fight alongside them.
 
-Their vehicles aree general recognized by their arms and their red+black color scheme.
+Their vehicles are recognized by their arms and their red+black color scheme.
 /NEW_ENTRY/ENTRY_NAME: GROX BEAM CAR
 SEAT_POSITION: Above the turret.
 
