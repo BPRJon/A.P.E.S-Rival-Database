@@ -1,0 +1,86 @@
+ENTRY_NAME: FACTION INFORMATION
+
+Grox Astro Fleet (further refered to as 'Grox' or 'The Grox') is a seemingly small rival faction that began their official invasions on December 5th, 2024.
+
+There are 2 known members: [Squidward Gaming] and Talion. Their vehicles are strong enough to where just the two of them pose a significant threat to even 3 A.P.E.S members -- although it is not unusual for them to attempt to enlist the help of entrants to fight alongside them.
+
+Their vehicles aree general recognized by their arms and their red+black color scheme.
+/NEW_ENTRY/
+ENTRY_NAME: GROX BEAM CAR
+SEAT_POSITION: Above the turret.
+
+This is a small, wheeled ground vehicle. Reasonably agile, but not incredibly so.
+
+Has a single weapon -- the "beam cannon," mounted on an omnidirectional turret on top of the hull. The weapon takes a few seconds to audibly charge up before firing, at which point it can continue firing indefinitely. The beam creates repeated explosions wherever it is aiming, causing damage.
+
+Not Very Accurate. Can be effectively neutralzied if flipped over.
+/NEW_ENTRY/
+ENTRY_NAME: GROX "UFO" TYPE 1
+SEAT_POSITION: UNKNOWN
+
+This is a small, aerial vehicle. Extremely agile, hard to hit.
+
+Has multiple wire turrets with spread which output a large amount of DPS. Somewhat figher-like. Reasonably easy to destroy, as the props do not obstruct the seat, and it has no shields.
+/NEW_ENTRY/
+ENTRY_NAME: GROX SHIELD BEARER
+SEAT_POSITION: UNKNOWN
+
+Mid-size aerial vehicle. Agile.
+
+Has explosive beams and is capable of doing melee damage. Follows the common pattern for Grox aerial vehicles to have a discernable "head" as well as arms. One arm carries the turrets, which allows the vehicle to fire in many directions regardless of what direction the hull is facing. One arm is equipped with a shield, which is solid and protects the vehicle and driver from attack. Does not appear to be capable of attacking so long as the shield is held up.
+/NEW_ENTRY/
+ENTRY_NAME: GROX GUNBOAT
+SEAT_POSITION: Roughly between the hull and the shield -- easy to hit, granted the shield isn't up
+
+Small aerial vehicle, undocumented speed.
+
+Several wire turrets. A shield exists at the front of the vehicle which can be freely toggled. While the shield is up, the vehicle cannot fire forwards as it also block's the vehicle's own weapons. Like most other Grox aerial vehicles, it cannot freely pitch or roll, so the shield can never defend from above or below.
+/NEW_ENTRY/
+ENTRY_NAME: GROX ORBITAL LASER
+SEAT_POSITION: UNKNOWN
+
+Large aerial vehicle. Slow.
+
+Several wire turrets and a simfphys turret concentrated at the end of the weapon barrel, with high damage and somewhat narrow spread cone. The vehicle is defenseless besides this single weapon, which has to be aimed by turning the entire vehicle around, but due to the damage it can put out (easily capable of draining tens of thousands of HP in a few seconds, which is enough to destroy almost anything) it should be targeted immediately when spotted.
+/NEW_ENTRY/
+ENTRY_NAME: GROX ABOMINATION
+SEAT_POSITION: UNKNOWN
+
+Large aerial vehicle. Very agile.
+
+All three arms are functionally identical and serve both as explosive beam weapons and melee weapons. When attempting melee combat, the vehicle will rush the target and fire large stakes from its arms to stab the target. The amount of damage this does is unknown. The size of the vehicle and its props make it hard to target and hit the driver's seat.
+/NEW_ENTRY/
+ENTRY_NAME: GROX "UFO" TYPE 2
+SEAT_POSITION: UNKNOWN
+
+Medium aerial vehicle. Agile.
+
+Three wire turrets, one on each of its "eyes," with high fire rate and spread.
+/NEW_ENTRY/
+ENTRY_NAME: GROX SENTINAL
+SEAT_POSITION: UNKNOWN
+
+Large aerial vehicle, not particularly agile.
+
+Has an explosive burst weapon on one arm. Purpose of the other arm is unknown.
+/NEW_ENTRY/
+ENTRY_NAME: GROX MONARCH
+SEAT_POSITION: Somewhere in front of vehicle, near the 'Crown'
+
+Largest known aerial vehicle. Highly agile.
+
+Has explosive weapons in both arms, and turrets in the eyes, appears to do extraordinary amounts of damage. Has a tendency to scream aloud -- audible across the entire map. Stupendous number of props; very hard to destroy.
+/NEW_ENTRY/
+ENTRY_NAME: GROX MILLSILEER
+SEAT_POSITION: In front and roughly in-between the weapon pods
+
+Medium aerial vehicle. Agile.
+
+Has both a high-ROF, high spread turret, and two weapon pods on its underside which rapidly fire explosive beams.
+/NEW_ENTRY/
+ENTRY_NAME: GROX PAWN
+SEAT_POSITION: Roughly in front of the body
+
+Small aerial vehicle. Agile.
+
+Has an explosive beam weapon.
