@@ -2,9 +2,14 @@ ENTRY_NAME: FACTION INFORMATION
 
 Grox Astro Fleet (further refered to as 'Grox' or 'The Grox') is a seemingly small rival faction that began their official invasions on December 5th, 2024. According to an interrogation by Skullbane, it was revealed that they attack us "because they [The Grox] are hungry for new technology."
 
-There are 2 known members: [Squidward Gaming] and Talion. Their vehicles are strong enough to where just the two of them pose a significant threat to even 3 A.P.E.S members -- although it is not unusual for them to attempt to enlist the help of entrants to fight alongside them.
+There are 2 known members, see MEMBER INFORMATION. Their vehicles are strong enough to where just the two of them pose a significant threat to even 3 A.P.E.S members -- although it is not unusual for them to attempt to enlist the help of entrants to fight alongside them.
 
 Their vehicles are recognized by their arms and their red+black color scheme.
+/NEW_ENTRY/ENTRY_NAME: MEMBER INFORMATION
+
+There are 2 confirmed members of The Grox: Talion and [Squidward Gaming] (further refered to as "Squiddy"). Talion is believed to just be a grunt while Squiddy has been describe by Talion, and observed to be the Engineer, creating the vehicles in later entries.
+
+From an interrogation with Talion after capturing him (Thank you Skullbane), we learned that there are 'few' members in The Grox, he was unable to tell us an exact number. Talion also revealed that they are constantly producing machines of war, which we have seen first hand with The Grox creating counters to our machines the same day they fight said machines.
 /NEW_ENTRY/ENTRY_NAME: GROX BEAM CAR
 SEAT_POSITION: Above the turret.
 
@@ -13,11 +18,6 @@ This is a small, wheeled ground vehicle. Reasonably agile, but not incredibly so
 Has a single weapon -- the "beam cannon," mounted on an omnidirectional turret on top of the hull. The weapon takes a few seconds to audibly charge up before firing, at which point it can continue firing indefinitely. The beam creates repeated explosions wherever it is aiming, causing damage.
 
 Not Very Accurate. Can be effectively neutralzied if flipped over.
-/NEW_ENTRY/ENTRY_NAME: MEMBER INFORMATION
-
-There are 2 confirmed members of The Grox: Talion and [Squidward Gaming] (furhter refered to as "Squiddy"). Talion is beleived to just be a grunt while Squiddy has been describe by Talion, and observed to be the Engineer, creating the vehicles in later entries.
-
-From an interrogation with Talion after capturing him (Thank you Skullbane), we learned that there are 'few' members in The Grox, he was unable to tell us an exact number. Talion also revealed that they are constantly producing machines of war, which we have seen first hand with The Grox creating counters to our machines the same day they fight said machines.
 /NEW_ENTRY/ENTRY_NAME: GROX "UFO" TYPE 1
 SEAT_POSITION: UNKNOWN
 
