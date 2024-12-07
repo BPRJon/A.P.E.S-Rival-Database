@@ -1,4 +1,4 @@
-VERSION = 1
+VERSION = 2
 --@name A.P.E.S Rivals Database Reader
 --@author jon b
 --@shared
@@ -8,6 +8,7 @@ if SERVER then
     Screen = prop.createComponent(chip():getPos()+Vector(0,0,50),(owner():getEyePos()-chip():getPos()+Vector(0,0,50)):getAngle():setP(90),"starfall_screen","models/hunter/plates/plate1x1.mdl",true)
     Screen:linkComponent(chip())
     net.start("NetScreen") net.writeEntity(Screen) net.send()
+    --check for updates
     http.get("https://raw.githubusercontent.com/BPRJon/A.P.E.S-Rival-Database/refs/heads/main/a.p.e.s%20rivals%20database%20reader.txt",function(data) local ver = string.explode("\n",data)[1] if ver != "VERSION = "..VERSION then print("Database Reader out of date! Please update at https://github.com/BPRJon/A.P.E.S-Rival-Database/blob/main/a.p.e.s%20rivals%20database%20reader.txt") end end,function() print("Couldn't check for possible updates. Go to https://github.com/BPRJon/A.P.E.S-Rival-Database/tree/main and check for updates please!") end)
 elseif CLIENT then
     --read the screen net
@@ -47,6 +48,19 @@ elseif CLIENT then
         end
     end
     
+    --[[
+    --testing url textures
+    render.createRenderTarget("TestMatCat")
+    TestMat = material.create("UnlitGeneric")
+    TestMat:setTextureRenderTarget("$basetexture","TestMatCat")
+    TestMat:setTextureURL("$basetexture","https://raw.githubusercontent.com/BPRJon/A.P.E.S-Rival-Database/refs/heads/main/alex.png")
+    ]]
+    
+    --set up the rendertarget
+    render.createRenderTarget("background-image")
+    RTMat = material.create("UnlitGeneric")
+    RTMat:setTextureRenderTarget("$basetexture","background-image")
+    
     --render the shit.
     render.setFont("Trebuchet24")
     local scroll = 0
@@ -70,12 +84,11 @@ elseif CLIENT then
             fancyPathText = fancyPathText..selectedFaction.."/"
             local scrollMax = table.count(entryList)*20
             button(480,0," X ",function() selectedFaction = nil selectedEntry = 0 end)
-            button(480,40,"UP",function() scroll = math.clamp(scroll+100,-scrollMax,0) end)
-            button(480,480,"DN",function() scroll = math.clamp(scroll-100,-scrollMax,0) end)
             if selectedEntry ~= 0 then
-                fancyPathText = fancyPathText..selectedEntry.."/"
                 local markup = render.parseMarkup("<font=Trebuchet24>"..entryList[selectedEntry].."</font>",450)
-                markup:draw(5+scroll,40)
+                _,scrollMax = markup:getSize()
+                markup:draw(5,40+scroll)
+                fancyPathText = fancyPathText..selectedEntry.."/"
                 button(450,0," < ",function() selectedEntry = 0 scroll = 0 end)
             else
                 for i,v in pairs(entryList) do
@@ -83,6 +96,8 @@ elseif CLIENT then
                     button(5,50*i+scroll,text,function() selectedEntry = i scroll = 0 end)
                 end
             end
+            button(480,40,"UP",function() scroll = math.clamp(scroll+100,-scrollMax,0) end)
+            button(480,480,"DN",function() scroll = math.clamp(scroll-100,-scrollMax,0) end)
         end
         render.drawSimpleText(5,15,fancyPathText,TEXT_ALIGN.LEFT,TEXT_ALIGN.CENTER)
         end)
