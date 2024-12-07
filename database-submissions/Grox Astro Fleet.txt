@@ -71,7 +71,7 @@ Largest known aerial vehicle. Highly agile.
 
 Has explosive weapons in both arms, and turrets in the eyes, appears to do extraordinary amounts of damage. Has a tendency to scream aloud -- audible across the entire map. Stupendous number of props; very hard to destroy.
 /NEW_ENTRY/
-ENTRY_NAME: GROX MILLSILEER
+ENTRY_NAME: GROX MISSILEER
 SEAT_POSITION: In front and roughly in-between the weapon pods
 
 Medium aerial vehicle. Agile.
@@ -84,3 +84,17 @@ SEAT_POSITION: Roughly in front of the body
 Small aerial vehicle. Agile.
 
 Has an explosive beam weapon.
+/NEW_ENTRY/
+ENTRY_NAME: GROX KNIGHT
+SEAT_POSITION: In front of the body
+
+Small aerial vehicle. Extremely agile.
+
+Similar to PAWN, but only has wire turrets.
+/NEW_ENTRY/
+ENTRY_NAME: GROX STAR DART
+SEAT_POSITION: UNKNOWN
+
+Small aerial vehicle, agile.
+
+Equipped with 2 turreted weapons on either side (uncertain if explosives or wire turrets)
