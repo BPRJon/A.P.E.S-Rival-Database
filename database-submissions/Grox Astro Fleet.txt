@@ -56,7 +56,7 @@ SEAT_POSITION: UNKNOWN
 Medium aerial vehicle. Agile.
 
 Three wire turrets, one on each of its "eyes," with high fire rate and spread.
-/NEW_ENTRY/ENTRY_NAME: GROX SENTINAL
+/NEW_ENTRY/ENTRY_NAME: GROX SENTINEL
 SEAT_POSITION: UNKNOWN
 
 Large aerial vehicle, not particularly agile.
