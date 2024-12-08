@@ -2,7 +2,7 @@ ENTRY_NAME: FACTION INFORMATION
 
 Grox Astro Fleet (further refered to as 'Grox' or 'The Grox') is a seemingly small rival faction that began their official invasions on December 5th, 2024. According to an interrogation by Skullbane, it was revealed that they attack us "because they [The Grox] are hungry for new technology."
 
-There are 3 known members, see MEMBER INFORMATION. Their vehicles are strong enough to where just the two of them pose a significant threat to even 3 A.P.E.S members -- although it is not unusual for them to attempt to enlist the help of entrants to fight alongside them.
+There are 4 known members, see MEMBER INFORMATION. Their vehicles are strong enough to where just the two of them pose a significant threat to even 3 A.P.E.S members -- although it is not unusual for them to attempt to enlist the help of entrants to fight alongside them.
 
 Their vehicles are recognized by their arms and their red+black color scheme.
 /NEW_ENTRY/ENTRY_NAME: MEMBER INFORMATION

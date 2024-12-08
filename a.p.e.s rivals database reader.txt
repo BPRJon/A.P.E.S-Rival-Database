@@ -1,4 +1,4 @@
-VERSION = 2
+VERSION = 3
 --@name A.P.E.S Rivals Database Reader
 --@author jon b
 --@shared
@@ -64,16 +64,17 @@ elseif CLIENT then
     --render the shit.
     render.setFont("Trebuchet24")
     local scroll = 0
+    local defaultBGLink = "https://raw.githubusercontent.com/BPRJon/A.P.E.S-Rival-Database/refs/heads/main/database-images/RESETBG.png"
+    --local defaultBGLink = "https://raw.githubusercontent.com/BPRJon/A.P.E.S-Rival-Database/refs/heads/main/alex.png"
     hook.add("render","drawscreen",function()
+        render.setRenderTargetTexture("background-image")
+        render.drawTexturedRectFast(0,30,1024,1024)
         mouseX,mouseY = render.cursorPos()
         render.clear()
         render.setColor(Color(100,0,0))
         render.drawRect(0,0,512,30)
         render.setColor(Color(255,255,255))
         local fancyPathText = "SAT4/RIVALS-DATABASE/"
-        if mouseX ~= nil then
-            render.drawCircle(mouseX,mouseY,3)
-        end
         if selectedFaction == nil then
             local num = 0
             for i,v in pairs(linkData) do
@@ -83,17 +84,17 @@ elseif CLIENT then
         else
             fancyPathText = fancyPathText..selectedFaction.."/"
             local scrollMax = table.count(entryList)*20
-            button(480,0," X ",function() selectedFaction = nil selectedEntry = 0 end)
+            button(480,0," X ",function() selectedFaction = nil selectedEntry = 0 RTMat:setTextureURL("$basetexture",defaultBGLink) end)
             if selectedEntry ~= 0 then
                 local markup = render.parseMarkup("<font=Trebuchet24>"..entryList[selectedEntry].."</font>",450)
                 _,scrollMax = markup:getSize()
                 markup:draw(5,40+scroll)
                 fancyPathText = fancyPathText..selectedEntry.."/"
-                button(450,0," < ",function() selectedEntry = 0 scroll = 0 end)
+                button(450,0," < ",function() selectedEntry = 0 scroll = 0 RTMat:setTextureURL("$basetexture",defaultBGLink) end)
             else
                 for i,v in pairs(entryList) do
                     local text = string.replace(string.explode("\n",v)[1],"ENTRY_NAME: ","")
-                    button(5,50*i+scroll,text,function() selectedEntry = i scroll = 0 end)
+                    button(5,50*i+scroll,text,function() selectedEntry = i scroll = 0 RTMat:setTextureURL("$basetexture","https://raw.githubusercontent.com/BPRJon/A.P.E.S-Rival-Database/refs/heads/main/database-images/"..string.replace(selectedFaction," ","").."/"..string.replace(string.replace(text," ",""),"\"","")..".png") end)
                 end
             end
             button(480,40,"UP",function() scroll = math.clamp(scroll+100,-scrollMax,0) end)
