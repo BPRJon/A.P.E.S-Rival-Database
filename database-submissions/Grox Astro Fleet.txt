@@ -91,4 +91,10 @@ SEAT_POSITION: UNKNOWN
 
 Small aerial vehicle, agile.
 
-Equipped with 2 turreted weapons on either side (uncertain if explosives or wire turrets)
+Equipped with two explosive weapons turrets, and four wire turrets.
+/NEW_ENTRY/ENTRY_NAME: GROX NEMESIS
+SEAT_POSITION: In front of the body
+
+Large aerial vehicle, agile.
+
+Appears to be heavily armored, with similar structure to the MONARCH. Bears a shield on its left arm. Weapons unknown.
