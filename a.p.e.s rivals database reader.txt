@@ -35,16 +35,19 @@ elseif CLIENT then
     --bunton function
     hook.add("think","mousepos and click detection",function() mouseClk = changed("DidTheyLeftClick",input.isMouseDown(MOUSE.LEFT)) and input.isMouseDown(MOUSE.LEFT) end)
     local buttonTable = {}
+    local render_drawRectOutline = render.drawRectOutline
+    local render_drawSimpleText = render.drawSimpleText
+    local render_getTextSize = render.getTextSize
     function button(x,y,text,func)
         if y > 30 or text == " X " or text == " < " then
-        local textSizeX,textSizeY = render.getTextSize(text)
+        local textSizeX,textSizeY = render_getTextSize(text)
         local buttonClk = mouseX ~= nil and mouseX < x+textSizeX+4 and mouseX > x and mouseY < y+textSizeY+4 and mouseY > y and mouseClk
         
         buttonTable[text] = buttonClk
         if func ~= nil and buttonClk then func() end
         
-        render.drawRectOutline(x-1,y-1,textSizeX+3,textSizeY+3)
-        render.drawSimpleText(x+1,y+1,text,TEXT_ALIGN.LEFT,TEXT_ALIGN.TOP)
+        render_drawRectOutline(x-1,y-1,textSizeX+3,textSizeY+3)
+        render_drawSimpleText(x+1,y+1,text,TEXT_ALIGN.LEFT,TEXT_ALIGN.TOP)
         end
     end
     
